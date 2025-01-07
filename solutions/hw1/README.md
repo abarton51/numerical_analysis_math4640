@@ -1,6 +1,6 @@
 # `hw1_sols`
 
-This module is designed as an entrypoint to run each solution. Each solution is a module titled something of the format `q1.py`, which would be the solution for question 1. To run `hw1_sols` as a package, simply run `python -m hw1_sols`. Running just this module does nothing however, as it looks for arguments following the `-q` flag. This flag stands for "questions" (without the extension). Simply pass in the modules for each question that you want to run.
+This module is designed as an entrypoint to run each solution. Each solution is a module titled something of the format `q1.py`, which would be the solution for question 1. To run `hw1_sols` as a package, simply run `python -m hw1_sols`. Running just this module does nothing however, as it looks for arguments following the `-q` flag. This flag stands for "questions". Simply pass in the modules for each question that you want to run (excluding the extension).
 
 For example: `python -m hw1_sols -q q1 q2 q5` will run the solutions for questions 1, 2, and 5.
 
