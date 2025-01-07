@@ -12,24 +12,24 @@ For example: `python -m hw1_sols -q q1 q2 q5` will run the solutions for questio
 - Run `conda activate hw1` to activate environment.
 - Run `python -m hw1_sols -q <question_modules>`. Replace `<question_modules>` with the actual module names (excluding the extension).
 
-# Linux
+# Running with Docker
+
+## Linux
 
 - Download zip file
 - Unzip
 - Build Docker container: `docker build -t hw1 ~/path/to/hw1`
 - Run Docker container interactively: `docker run -it hw1 /bin/bash`
 - Run solution modules for each question. Example: `python -m hw1_sols -q q1`
-  - `-q` is a flag for the question modules to run. Each question module is a solution for a question. The primary module ran called after `-m` is used as an entrypoint for running question modules.
 
-# Windows
+## Windows
 
 - Download zip file
 - Unzip somewhere
 - Open `hw1` with VSCode
 - Build and Open container (you can use `Ctrl + Shift + P` and click ">Dev Containers: Rebuild Container"
-- Once container is open, use integrated terminal to run `python -m hw1_sols -q q1`
+- Run solution modules for each question. Example: `python -m hw1_sols -q q1`
 
-# MacOS
+## MacOS
 
 I don't know. Sorry.
-
