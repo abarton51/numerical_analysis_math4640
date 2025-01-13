@@ -1,1 +1,1 @@
-# numerical_analysis_math4640
+# Numerical Analysis - MATH 4640 - Georgia Tech
