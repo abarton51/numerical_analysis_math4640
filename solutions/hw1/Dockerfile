@@ -4,9 +4,7 @@ WORKDIR /home/solutions
 
 COPY environment.yml .
 
-RUN conda env create -f environment.yml
-
-SHELL ["conda", "run", "-n", "numerical_analysis", "/bin/bash", "-c"]
+RUN conda env update --name base --file environment.yml --prune
 
 COPY . .
 

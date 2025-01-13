@@ -2,7 +2,7 @@ name: numerical_analysis
 channels:
   - conda-forge
 dependencies:
-  - python=3.9
+  - python
   - numpy
   - scipy
   - matplotlib
