@@ -27,5 +27,11 @@ Code repository for homework and possibly other material for MATH 4640 - Numeric
   - hw3
   - hw4
 
+## Running
 
+Each homework solution is located in the `solutions/` directory. Simply build and run the container from the Dockerfile in each homework folder.
+
+Example: `docker build -t hw1 .`
+
+Once inside the container's shell, run `python -m s -q <question_module`. For example, `python -m s -q q3` would run the solution for question 3. Solutions are displayed in terminal.
 
