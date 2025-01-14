@@ -35,3 +35,5 @@ Example: `docker build -t hw1 .`
 
 Once inside the container's shell, run `python -m s -q <question_module`. For example, `python -m s -q q3` would run the solution for question 3. Solutions are displayed in terminal.
 
+Each homework solution directory has a README with more details on building and running.
+
