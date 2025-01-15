@@ -3,6 +3,13 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Latex compiling files
+*.aux
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.thm
+
 # C extensions
 *.so
 
