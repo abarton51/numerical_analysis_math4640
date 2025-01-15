@@ -34,7 +34,10 @@
 \theoremseparator{. ---}
 \theoremsymbol{\mbox{\texttt{;o)}}}
 \newtheorem{varsol}{Solution (variant)}
-     
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
 \usetikzlibrary{matrix}
 \setlength{\marginparwidth}{2cm} 
 
@@ -59,8 +62,8 @@
         \end{enumerate}
         \item
         \begin{enumerate}[label=\alph*)]
-            \item
-            \item
+            \item This is $2^5 + 2^4 + 2^2 + 2^1$ so this is $11110$ in binary.
+            \item This is $2^7 +2^6 + 2^5 + 2^4 + 2^3$
             \item
         \end{enumerate}
     \end{enumerate}
@@ -69,9 +72,23 @@
 \hspace{18pt}\textbf{Problem 2:} \medskip
 \begin{sol}
     \begin{enumerate}[label=\alph*)]
-        \item
-        \item
-        \item
+        \item Absolute error is
+            \begin{gather*}
+                |10451.0023 - 10451.001| = 0.0013
+            \end{gather*}
+            Relative error is
+            \begin{gather*}
+                \frac{0.0013}{10451.0023} = .124389983 \times 10^{-6}
+            \end{gather*}
+        \item Absolute error is
+            \begin{gather*}
+                |0.451011 \times 10^4 - 0.451010\times 10^4| = 0.01
+            \end{gather*}
+            Relative error is
+            \begin{gather*}
+                \frac{0.01}{0.451011\times 10^4} = 0.22171 \times 10^{-5}
+            \end{gather*}
+        \item 
     \end{enumerate}
 \end{sol}
 
