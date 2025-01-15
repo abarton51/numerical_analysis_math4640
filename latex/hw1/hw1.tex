@@ -94,9 +94,30 @@
 
 \hspace{18pt}\textbf{Problem 3:} \medskip
 \begin{sol}
+    NOTE TO READER: I am adjusting some basic notation to match the Python code I have written for these algorithms. It's not necessary but it makes it easier to reference code from the mathematical algorithm.
     \begin{enumerate}[label=\alph*)]
-        \item
-        \item
+        \item Algorithm
+
+            Let $B$ be the base 2 number represented in $\beta$ notation. That is, $B = (a_0 a_1 \ldots a_{l-1}.b_1 b_2 \ldots b_r)_\beta$. Note that our indices are different than the textbook, but it's the same notation nonetheless.
+
+            For bits to the left of the radix point do the following steps: (Note that following our notation, $l$ is the number of bits left of the radix point)
+
+            Let $i\in \{0, \ldots, l-1\}$. Calculate the sum $L = \sum_{i=0}^{l-1}2^{l - (i+1)}$.
+
+            For bits to the right of the radix point do the following steps: (Note that following our notation, $r$ is the number of bits right of the radix point)
+
+            Let $j\in \{1, \ldots, r\}$. Calculate the sum $R = \sum_{j=1}^r 2^{-(i+1)}$.
+
+            The sum, $L+R$ and that is the decimal equivalent. That is, $B = L+R$ where $B$ is the base 2 encoded number and $L+R$ is the decimal equivalent. 
+
+            Note that all operations and numbers in the algorithm is assumed to be represented in base 10, but the algorithm remains the same nonetheless, so long as we understand our representation of the number of two ($10$ in base 2 and $2$ in base 10).
+
+            Thus, our algorithm takes a binary encoded number (base 2) and converts to the decimal equivalent, $L+R$.
+
+
+        \item Algorithm
+
+
     \end{enumerate}
 \end{sol}
 
