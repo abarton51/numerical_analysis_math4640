@@ -13,11 +13,19 @@ def convert_bin_to_dec(bin_code: str) -> str:
             result += 2**(-(i+1))
     return str(result)
 
-def convert_dec_to_bin(dec_code):
-    pass
+def convert_dec_to_bin(dec: float) -> str:
+    result = []
+    while dec > 0:
+        dec//=2
+        if dec%2==1:
+            result.append("1")
+        else:
+            result.append("0")
+    return ''.join(result)
 
 def create_cases(size, low, high):
-    dec_code_cases = [str(num) for num in np.random.uniform(low, high, size)]
+    dec_cases = np.random.uniform(low, high, size)
+    dec_code_cases = [str(num) for num in dec_cases]
     bin_code_cases = []
 
     # annoying conversion from decimal to binary (not my algo)
@@ -35,14 +43,15 @@ def create_cases(size, low, high):
 
         bin_code_cases.append(lb + "." + rb)
 
-    return bin_code_cases, dec_code_cases
+    return bin_code_cases, dec_cases
 
 def main():
     # setting up hyperparamters for multiple cases
     size = 10
     low = -50000
     high = 50000
-    bin_code_cases, dec_code_cases = create_cases(size, low, high)
+    # returns binary encodings as strings (with the radix point) and decimal numbers as floats
+    bin_code_cases, dec_cases = create_cases(size, low, high)
     print("Solution for question 3\n-----------------------------")
     print("Beginning solution to 3.a")
     print("Converting Binary to Decimal code for the following cases:")
@@ -57,7 +66,14 @@ def main():
 
     print("Beginning solution to 3.b")
     print("Converting Decimal to Binary code for the following cases:")
-    # TODO: convert decimal to binary
+    for c in dec_cases:
+        print(str(c) + '\n')
+    bin_from_dec = []
+    for i, c in enumerate(dec_cases):
+        print(f'\n---|Case: {i+1}, Decimal number: {str(c)} |---')
+        bin_from_dec.append(convert_dec_to_bin(c))
+        print(bin_from_dec[i])
+    print("---DONE---\n")
 
 if __name__ == '__main__':
     main()
