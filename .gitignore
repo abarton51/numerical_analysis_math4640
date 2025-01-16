@@ -11,7 +11,7 @@ __pycache__/
 *.thm
 
 # rust debug executables
-target/debug/
+debug/
 
 # rust cachedir file
 CACHEDIR.TAG
