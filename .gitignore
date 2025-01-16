@@ -13,6 +13,9 @@ __pycache__/
 # rust executables
 target/
 
+# lock files
+*.lock
+
 # C extensions
 *.so
 
