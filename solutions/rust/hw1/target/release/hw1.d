@@ -1,0 +1,1 @@
+/home/teddy/Documents/Academics/Math/Numerical/numerical_analysis_math4640/solutions/rust/hw1/target/release/hw1: /home/teddy/Documents/Academics/Math/Numerical/numerical_analysis_math4640/solutions/rust/hw1/src/main.rs /home/teddy/Documents/Academics/Math/Numerical/numerical_analysis_math4640/solutions/rust/hw1/src/q3.rs
