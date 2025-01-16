@@ -3,7 +3,7 @@ FROM rust:latest
 WORKDIR /usr/src/hw1
 COPY . .
 
-RUN cargo install --path .
+RUN cargo build --release
 
-CMD ["hw1"]
+CMD ["cargo", "run", "--", "q3"]
 
