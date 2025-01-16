@@ -26,6 +26,14 @@ Code repository for homework and possibly other material for MATH 4640 - Numeric
   - hw2
   - hw3
   - hw4
+  - rust
+    - hw1
+      - Dockerfile
+      - Cargo.toml
+      - src
+    - hw2
+    - hw3
+    - hw4
 
 ## Running
 
