@@ -16,9 +16,6 @@ debug/
 # rust cachedir file
 CACHEDIR.TAG
 
-# lock files
-*.lock
-
 # C extensions
 *.so
 
