@@ -10,8 +10,11 @@ __pycache__/
 *.synctex.gz
 *.thm
 
-# rust executables
-target/
+# rust debug executables
+target/debug/
+
+# rust cachedir file
+CACHEDIR.TAG
 
 # lock files
 *.lock
