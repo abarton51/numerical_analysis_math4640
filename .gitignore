@@ -10,6 +10,9 @@ __pycache__/
 *.synctex.gz
 *.thm
 
+# rust executables
+target/
+
 # C extensions
 *.so
 
