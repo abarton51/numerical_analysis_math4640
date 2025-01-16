@@ -8,5 +8,5 @@ RUN conda env update --name base --file environment.yml --prune
 
 COPY . .
 
-CMD ["python", "-m", "hw3_sols"]
+CMD ["/bin/bash"]
 

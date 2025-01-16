@@ -1,40 +1,5 @@
 import numpy as np
 
-def main():
-    print("Solution for question 3\n-----------------------------")
-    # setting up hyperparamters for multiple cases
-    size = 10
-    low = -50000
-    high = 50000
-    cases = [str(num) for num in np.random.uniform(low, high, size)]
-
-    # annoying conversion from decimal to binary (not my algo)
-    for i in range(len(cases)):
-        c = cases[i]
-        d = c.split(".")
-        lb = bin(int(d[0]))
-        b_idx = lb.find('b')
-        lb = lb[b_idx+1:]
-        rb = bin(int(d[1]))
-        b_idx = rb.find('b')
-        rb = rb[b_idx+1:]
-        cases[i] = lb + "." + rb
-
-    print("Beginning solution to 3.a")
-    print("Converting Binary to Decimal code for the following cases:")
-    for c in cases:
-        print(c + '\n')
-    bin_cases = []
-    for i, c in enumerate(cases):
-        print(f'\n---|Case: {i+1}, Binary number: {c} |---')
-        bin_cases.append(convert_bin_to_dec(c))
-        print(bin_cases[i])
-    print("---DONE---\n")
-
-    print("Beginning solution to 3.b")
-    print("Converting Decimal to Binary code for the following cases:")
-    # TODO: convert decimal to binary
-
 def convert_bin_to_dec(bin_code: str) -> str:
     result = 0
     bins = bin_code.split(".")
@@ -48,8 +13,67 @@ def convert_bin_to_dec(bin_code: str) -> str:
             result += 2**(-(i+1))
     return str(result)
 
-def convert_dec_to_bin(dec_code):
-    pass
+def convert_dec_to_bin(dec: float) -> str:
+    result = []
+    while dec > 0:
+        dec//=2
+        if dec%2==1:
+            result.append("1")
+        else:
+            result.append("0")
+    return ''.join(result)
+
+def create_cases(size, low, high):
+    dec_cases = np.random.uniform(low, high, size)
+    dec_code_cases = [str(num) for num in dec_cases]
+    bin_code_cases = []
+
+    # annoying conversion from decimal to binary (not my algo)
+    for i in range(len(dec_code_cases)):
+        c = dec_code_cases[i]
+        d = c.split(".")
+
+        lb = bin(int(d[0]))
+        b_idx = lb.find('b')
+        lb = lb[b_idx+1:]
+
+        rb = bin(int(d[1]))
+        b_idx = rb.find('b')
+        rb = rb[b_idx+1:]
+
+        bin_code_cases.append(lb + "." + rb)
+
+    return bin_code_cases, dec_cases
+
+def main():
+    # setting up hyperparamters for multiple cases
+    size = 10
+    low = -50000
+    high = 50000
+    # returns binary encodings as strings (with the radix point) and decimal numbers as floats
+    bin_code_cases, dec_cases = create_cases(size, low, high)
+    print("Solution for question 3\n-----------------------------")
+    print("Beginning solution to 3.a")
+    print("Converting Binary to Decimal code for the following cases:")
+    for c in bin_code_cases:
+        print(c + '\n')
+    dec_from_bin = []
+    for i, c in enumerate(bin_code_cases):
+        print(f'\n---|Case: {i+1}, Binary number: {c} |---')
+        dec_from_bin.append(convert_bin_to_dec(c))
+        print(dec_from_bin[i])
+    print("---DONE---\n")
+
+    print("Beginning solution to 3.b")
+    print("Converting Decimal to Binary code for the following cases:")
+    for c in dec_cases:
+        print(str(c) + '\n')
+    bin_from_dec = []
+    for i, c in enumerate(dec_cases):
+        print(f'\n---|Case: {i+1}, Decimal number: {str(c)} |---')
+        bin_from_dec.append(convert_dec_to_bin(c))
+        print(bin_from_dec[i])
+    print("---DONE---\n")
 
 if __name__ == '__main__':
     main()
