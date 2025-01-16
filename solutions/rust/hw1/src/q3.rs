@@ -5,10 +5,21 @@ use std::f64;
 // Function to convert binary to decimal
 pub fn convert_bin_to_dec(bin_code: &str) -> f64 {
     let mut result = 0.0;
+    let mut bin_code = bin_code.trim();
+
+    let is_neg = bin_code.starts_with('-');
+    if is_neg {
+        bin_code = &bin_code[1..];
+    }
+
     let bins: Vec<&str> = bin_code.split('.').collect();
-    let (left_bits, right_bits) = (bins[0], bins[1]);
+    let (left_bits, right_bits) = if bins.len() == 2 {
+        (bins[0], bins[1])
+    } else {
+        (bins[0], "")
+    };
+
     let lnum = left_bits.len();
-    let rnum = right_bits.len();
 
     // Process left bits (integer part)
     for (i, bit) in left_bits.chars().enumerate() {
@@ -24,20 +35,49 @@ pub fn convert_bin_to_dec(bin_code: &str) -> f64 {
         }
     }
 
+    if is_neg {
+        result = -result;
+    }
+
     result
 }
 
-pub fn convert_dec_to_bin(mut dec: f64) -> String {
+pub fn convert_dec_to_bin(dec: f64) -> String {
     let mut result = String::new();
-    let mut integer_part = dec.trunc() as u64;
-    let mut fractional_part = dec.fract();
+
+    if dec < 0.0 {
+        result.push('-');
+    }
+
+    let mut integer_part = dec.abs().trunc() as u64;
+    let mut fractional_part = dec.abs().fract();
 
     // Convert the integer part to binary
-    while integer_part > 0 {
-        result.insert(0, if integer_part % 2 == 0 { '0' } else { '1' });
+    if integer_part == 0 {
+        result.push('0');
+    } else {
+        let mut integer_binary = String::new();
+        while integer_part > 0 {
+            integer_binary.insert(0, if integer_part % 2 == 0 { '0' } else { '1' });
+            integer_part /= 2;
+        }
+        result.push_str(&integer_binary);
     }
 
     result.push('.');
+
+    let max_iterations = 64;
+    let epsilon = 1e-15;
+    let mut iteration_count = 0;
+
+    // Convert the fractional part to binary
+    while fractional_part > epsilon && iteration_count < max_iterations {
+        fractional_part *= 2.0;
+        let integer = fractional_part.trunc() as u64;
+        result.push(if integer == 1 { '1' } else { '0' });
+        fractional_part -= integer as f64;
+        iteration_count += 1;
+    }
 
     result
 }
@@ -50,14 +90,52 @@ pub fn create_cases(size: usize, low: f64, high: f64) -> (Vec<String>, Vec<f64>)
     // Generate random decimal numbers
     for _ in 0..size {
         let dec = rng.gen_range(low..high);
-        dec_cases.push(dec);
+        let rounded_dec = (dec * 100000.0).round() / 100000.0;
+        dec_cases.push(rounded_dec);
+        bin_code_cases.push(convert_dec_to_bin(rounded_dec));
     }
 
     (bin_code_cases, dec_cases)
 }
 
 pub fn main() {
-    println!("Running Solution for Question 1\n");
+    // setting up hyperparamters for multiple cases
+    let size = 10;
+    let low = -10.0;
+    let high = 10.0;
+    // returns binary encodings as strings (with the radix point) and decimal numbers as floats
+    let (bin_code_cases, dec_cases) = create_cases(size, low, high);
+    println!("Running Solution for Question 3\n--------------------------\n");
 
+    println!("Running Solution for Question 3.a\n");
+    println!("Converting Binary to Decimal code for the following cases:\n");
+
+    for c in bin_code_cases.iter() {
+        println!("{}\n", c);
+    }
+
+    let mut dec_from_bin = Vec::new();
+    for (i, c) in bin_code_cases.iter().enumerate() {
+        println!("\n---|Case: {}, Binary number: {} |---", i + 1, c);
+        let dec_value = convert_bin_to_dec(c);
+        dec_from_bin.push(dec_value);
+        println!("{}\n", dec_value);
+    }
+    println!("---DONE---\n");
+
+    println!("Running Solution for Question 3.b\n");
+    println!("Converting Decimal to Binary code for the following cases:\n");
+
+    for c in dec_cases.iter() {
+        println!("{}\n", c);
+    }
+
+    let mut bin_from_dec = Vec::new();
+    for (i, c) in dec_cases.iter().enumerate() {
+        println!("\n---|Case: {}, Decimal number: {} |---", i + 1, c);
+        let bin_value = convert_dec_to_bin(*c);
+        bin_from_dec.push(bin_value.clone());
+        println!("{}", &bin_value);
+    }
     println!("---DONE---\n");
 }
