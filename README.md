@@ -30,7 +30,9 @@ Code repository for homework and possibly other material for MATH 4640 - Numeric
     - hw1
       - Dockerfile
       - Cargo.toml
+      - Cargo.lock
       - src
+      - target
     - hw2
     - hw3
     - hw4
