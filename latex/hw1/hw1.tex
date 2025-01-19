@@ -117,6 +117,21 @@
 
         \item Algorithm
 
+            Let $D$ be the base 2 number represented in $\beta$ notation. That is, $D = (a_0 a_1 \ldots a_{l-1}.b_1 b_2 \ldots b_r)_\beta$. Note that our indices are different than the textbook, but it's the same notation nonetheless.
+
+            For digits to the left of the radix point do the following steps: (Note that following our notation, $l$ is the number of digits left of the radix point)
+
+            Let $i\in \{0, \ldots, l-1\}$.
+
+            For digits to the right of the radix point do the following steps: (Note that following our notation, $r$ is the number of digits right of the radix point)
+
+            Let $j\in \{1, \ldots, r\}$.
+
+            The sum, $L+R$ and that is the binary equivalent. That is, $D = L+R$ where $D$ is the base 10 encoded number and $L+R$ is the binary equivalent. 
+
+            Thus, our algorithm takes a decimal encoded number (base 10) and converts to the binary equivalent, $L+R$.
+
+
 
     \end{enumerate}
 \end{sol}
