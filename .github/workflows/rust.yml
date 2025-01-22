@@ -16,5 +16,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Build
+    - name: Build Practice
+      working-directory: ./solutions/rust/practice
+      run: cargo build --verbose
+
+    - uses: actions/checkout@v4
+    - name: Build HW1
+      working-directory: ./solutions/rust/hw1
       run: cargo build --verbose
