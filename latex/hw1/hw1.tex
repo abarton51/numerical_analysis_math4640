@@ -49,116 +49,130 @@
 \maketitle
 
 \vspace{2em}
-
+% DONE
 \hspace{18pt}\textbf{Problem 1:} \medskip
 \begin{sol}
-    \begin{enumerate}[label=\roman*.]
-        \item
-        \begin{enumerate}[label=\alph*)]
-            \item $2^4 * 1 + 2^3 * 1 + 2^2 * 1 + 2^1 * 0 + 2^0 * 1 + 2^{-1} * 1 + 2^{-2} * 0 + 2^{-3} * 1 + 2^{-4} * 1 + 2^{-5} * 1 = 16 + 8 + 4 + 1 + 0.5 + 0.125 + 0.0625 +  0.03125 = 29.71875$
-            \item $16^2 * 2 + 16^1 * 11 + 16^0 * 3 + 16^{-1} * 15 + 16^{-2} * 15 = 512 + 176 + 3 + 0.9375 + 0.05859375 = 691.99609375$
-            \item $\sum_{i = 1}^n 2^{i-1} * 1$
-            \item $\sum_{i = 1}^n 2^{-i} * 1$
-        \end{enumerate}
-        \item
-        \begin{enumerate}[label=\alph*)]
-            \item This is $2^5 + 2^4 + 2^2 + 2^1$ so this is $11110$ in binary.
-            \item This is $2^7 +2^6 + 2^5 + 2^4 + 2^3$
-            \item
-        \end{enumerate}
-    \end{enumerate}
+	\begin{enumerate}[label=\roman*.]
+		\item
+		      \begin{enumerate}[label=\alph*)]
+			      \item $2^4 * 1 + 2^3 * 1 + 2^2 * 1 + 2^1 * 0 + 2^0 * 1 + 2^{-1} * 1 + 2^{-2} * 0 + 2^{-3} * 1 + 2^{-4} * 1 + 2^{-5} * 1 = 16 + 8 + 4 + 1 + 0.5 + 0.125 + 0.0625 +  0.03125 = 29.71875$
+			      \item $16^2 * 2 + 16^1 * 11 + 16^0 * 3 + 16^{-1} * 15 + 16^{-2} * 15 = 512 + 176 + 3 + 0.9375 + 0.05859375 = 691.99609375$
+			      \item $\sum_{i = 1}^n 2^{i-1} * 1$
+			      \item $\sum_{i = 1}^n 2^{-i} * 1$
+		      \end{enumerate}
+		\item
+		      \begin{enumerate}[label=\alph*)]
+			      \item This is $2^5 + 2^4 + 2^2 + 2^1$ so this is $11110$ in binary.
+			      \item This is $2^7 +2^6 + 2^5 + 2^4 + 2^3$
+			      \item
+		      \end{enumerate}
+	\end{enumerate}
 \end{sol}
 
-\hspace{18pt}\textbf{Problem 2:} \medskip
+% TODO
+\hspace{18pt}
 \begin{sol}
-    \begin{enumerate}[label=\alph*)]
-        \item Absolute error is
-            \begin{gather*}
-                |10451.0023 - 10451.001| = 0.0013
-            \end{gather*}
-            Relative error is
-            \begin{gather*}
-                \frac{0.0013}{10451.0023} = .124389983 \times 10^{-6}
-            \end{gather*}
-        \item Absolute error is
-            \begin{gather*}
-                |0.451011 \times 10^4 - 0.451010\times 10^4| = 0.01
-            \end{gather*}
-            Relative error is
-            \begin{gather*}
-                \frac{0.01}{0.451011\times 10^4} = 0.22171 \times 10^{-5}
-            \end{gather*}
-        \item 
-    \end{enumerate}
+	\begin{enumerate}[label=\alph*)]
+		% (a)
+		\item Absolute error is
+		      \begin{gather*}
+			      |10451.0023 - 10451.001| = 0.0013
+		      \end{gather*}
+		      Relative error is
+		      \begin{gather*}
+			      \frac{0.0013}{10451.0023} = .124389983 \times 10^{-6}
+		      \end{gather*}
+		      % (b)
+		\item Absolute error is
+		      \begin{gather*}
+			      |0.451011 \times 10^4 - 0.451010\times 10^4| = 0.01
+		      \end{gather*}
+		      Relative error is
+		      \begin{gather*}
+			      \frac{0.01}{0.451011\times 10^4} = 0.22171 \times 10^{-5}
+		      \end{gather*}
+		      % (c)
+		\item $x_T = x_A + \epsilon$. Solving for $\epsilon$, $\epsilon = x_T - x_A = 10451.0023 - 10451.001 = 0.0013$.
+
+		      $y_T = y_A + \eta$. Solving for $\eta$, $\eta = y_T - y_A = 4510.11 - 4510.10 = 0.01$.
+
+		      $E_{rel}(x_Ay_A) = | \frac{x_A\eta + y_A\epsilon + \epsilon \eta}{x_Ty_t} | = \Big|  \frac{10451.001 \times 0.01 + 4510.10 \times 0.0013 + 0.0013 \times 0.01}{10451.0023 \times 4510.11} | = \frac{110.373153}{47135169.983253} = 0.0000023416 = 0.23416\times 10^{-5}$.
+
+		      $x_Ay_A = 47135059.6101$.
+
+		      In this calculation. We see that the number of accurate digits retained is $5$, which is the number of digits of the relative error in this calculation.
+
+		      Now, $E_{rel}(x_A - y_A)$
+	\end{enumerate}
 \end{sol}
 
 \hspace{18pt}\textbf{Problem 3:} \medskip
 \begin{sol}
-    NOTE TO READER: I am adjusting some basic notation to match the Python code I have written for these algorithms. It's not necessary but it makes it easier to reference code from the mathematical algorithm.
-    \begin{enumerate}[label=\alph*)]
-        \item Algorithm
+	NOTE TO READER: I am adjusting some basic notation to match the Python code I have written for these algorithms. It's not necessary but it makes it easier to reference code from the mathematical algorithm.
+	\begin{enumerate}[label=\alph*)]
+		\item Algorithm
 
-            Let $B$ be the base 2 number represented in $\beta$ notation. That is, $B = (a_0 a_1 \ldots a_{l-1}.b_1 b_2 \ldots b_r)_\beta$. Note that our indices are different than the textbook, but it's the same notation nonetheless.
+		      Let $B$ be the base 2 number represented in $\beta$ notation. That is, $B = (a_0 a_1 \ldots a_{l-1}.b_1 b_2 \ldots b_r)_\beta$. Note that our indices are different than the textbook, but it's the same notation nonetheless.
 
-            For bits to the left of the radix point do the following steps: (Note that following our notation, $l$ is the number of bits left of the radix point)
+		      For bits to the left of the radix point do the following steps: (Note that following our notation, $l$ is the number of bits left of the radix point)
 
-            Let $i\in \{0, \ldots, l-1\}$. Calculate the sum $L = \sum_{i=0}^{l-1}2^{l - (i+1)}$.
+		      Let $i\in \{0, \ldots, l-1\}$. Calculate the sum $L = \sum_{i=0}^{l-1}2^{l - (i+1)}$.
 
-            For bits to the right of the radix point do the following steps: (Note that following our notation, $r$ is the number of bits right of the radix point)
+		      For bits to the right of the radix point do the following steps: (Note that following our notation, $r$ is the number of bits right of the radix point)
 
-            Let $j\in \{1, \ldots, r\}$. Calculate the sum $R = \sum_{j=1}^r 2^{-(i+1)}$.
+		      Let $j\in \{1, \ldots, r\}$. Calculate the sum $R = \sum_{j=1}^r 2^{-(i+1)}$.
 
-            The sum, $L+R$ and that is the decimal equivalent. That is, $B = L+R$ where $B$ is the base 2 encoded number and $L+R$ is the decimal equivalent. 
+		      The sum, $L+R$ and that is the decimal equivalent. That is, $B = L+R$ where $B$ is the base 2 encoded number and $L+R$ is the decimal equivalent.
 
-            Note that all operations and numbers in the algorithm is assumed to be represented in base 10, but the algorithm remains the same nonetheless, so long as we understand our representation of the number of two ($10$ in base 2 and $2$ in base 10).
+		      Note that all operations and numbers in the algorithm is assumed to be represented in base 10, but the algorithm remains the same nonetheless, so long as we understand our representation of the number of two ($10$ in base 2 and $2$ in base 10).
 
-            Thus, our algorithm takes a binary encoded number (base 2) and converts to the decimal equivalent, $L+R$.
-
-
-        \item Algorithm
-
-            Let $D$ be the base 2 number represented in $\beta$ notation. That is, $D = (a_0 a_1 \ldots a_{l-1}.b_1 b_2 \ldots b_r)_\beta$. Note that our indices are different than the textbook, but it's the same notation nonetheless.
-
-            For digits to the left of the radix point do the following steps: (Note that following our notation, $l$ is the number of digits left of the radix point)
-
-            Let $i\in \{0, \ldots, l-1\}$.
-
-            For digits to the right of the radix point do the following steps: (Note that following our notation, $r$ is the number of digits right of the radix point)
-
-            Let $j\in \{1, \ldots, r\}$.
-
-            The sum, $L+R$ and that is the binary equivalent. That is, $D = L+R$ where $D$ is the base 10 encoded number and $L+R$ is the binary equivalent. 
-
-            Thus, our algorithm takes a decimal encoded number (base 10) and converts to the binary equivalent, $L+R$.
+		      Thus, our algorithm takes a binary encoded number (base 2) and converts to the decimal equivalent, $L+R$.
 
 
+		\item Algorithm
 
-    \end{enumerate}
+		      Let $D$ be the base 2 number represented in $\beta$ notation. That is, $D = (a_0 a_1 \ldots a_{l-1}.b_1 b_2 \ldots b_r)_\beta$. Note that our indices are different than the textbook, but it's the same notation nonetheless.
+
+		      For digits to the left of the radix point do the following steps: (Note that following our notation, $l$ is the number of digits left of the radix point)
+
+		      Let $i\in \{0, \ldots, l-1\}$.
+
+		      For digits to the right of the radix point do the following steps: (Note that following our notation, $r$ is the number of digits right of the radix point)
+
+		      Let $j\in \{1, \ldots, r\}$.
+
+		      The sum, $L+R$ and that is the binary equivalent. That is, $D = L+R$ where $D$ is the base 10 encoded number and $L+R$ is the binary equivalent.
+
+		      Thus, our algorithm takes a decimal encoded number (base 10) and converts to the binary equivalent, $L+R$.
+
+
+
+	\end{enumerate}
 \end{sol}
 
 \hspace{18pt}\textbf{Problem 4:} \medskip
 \begin{sol}
-    
+
 \end{sol}
 
 \hspace{18pt}\textbf{Problem 5:} \medskip
 \begin{sol}
-    
+
 \end{sol}
 
 \hspace{18pt}\textbf{Problem 6:} \medskip
 \begin{sol}
-    
+
 \end{sol}
 
 \hspace{18pt}\textbf{Problem 7:} \medskip
 \begin{sol}
-    
+
 \end{sol}
 
 \hspace{18pt}\textbf{Problem 8:} \medskip
 \begin{sol}
-    
+
 \end{sol}
 
 \end{document}
