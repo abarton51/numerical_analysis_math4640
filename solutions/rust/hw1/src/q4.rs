@@ -12,12 +12,11 @@ fn solve_p4() {
     let n = x.len();
 
     let d = ndd(&x, &y);
+    let d_r = round_coefficients(&d, 1e-2);
 
     let t = 1.5;
-    let f_t = interpolate_polynomial(&x, &d, &t, &n);
+    let f_t = interpolate_polynomial(&x, &d_r, &t, &n);
 
-    let rounded_d = round_coefficients(&d, 1e-2);
-
-    println!("Polynomial coefficients: {:?}", &rounded_d[1..]);
+    println!("Polynomial coefficients: {:?}", &d_r[1..]);
     println!("Interpolated value at t = {t}: {f_t}");
 }

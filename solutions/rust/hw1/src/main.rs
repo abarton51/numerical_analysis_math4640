@@ -4,6 +4,7 @@ use std::process;
 mod math;
 mod q3; // Include solution for question 3
 mod q4;
+mod q5;
 
 fn run_question(question: &str) {
     match question {
@@ -14,6 +15,10 @@ fn run_question(question: &str) {
         "q4" => {
             println!("Running q4 module...\n");
             q4::main();
+        }
+        "q5" => {
+            println!("Running q5 module...\n");
+            q5::main();
         }
         _ => {
             println!("Error: Could not find the module {}", question);
