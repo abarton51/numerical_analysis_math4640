@@ -1,13 +1,19 @@
 use std::env;
 use std::process;
 
+mod math;
 mod q3; // Include solution for question 3
+mod q4;
 
 fn run_question(question: &str) {
     match question {
         "q3" => {
             println!("Running q3 module...\n");
             q3::main();
+        }
+        "q4" => {
+            println!("Running q4 module...\n");
+            q4::main();
         }
         _ => {
             println!("Error: Could not find the module {}", question);
