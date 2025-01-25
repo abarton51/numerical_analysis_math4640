@@ -90,7 +90,7 @@ pub fn create_cases(size: usize, low: f64, high: f64) -> (Vec<String>, Vec<f64>)
     // Generate random decimal numbers
     for _ in 0..size {
         let dec = rng.gen_range(low..high);
-        let rounded_dec = (dec * 100000.0).round() / 100000.0;
+        let rounded_dec = (dec * 10000.0).round() / 10000.0;
         dec_cases.push(rounded_dec);
         bin_code_cases.push(convert_dec_to_bin(rounded_dec));
     }

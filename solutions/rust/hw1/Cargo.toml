@@ -5,3 +5,6 @@ edition = "2021"
 
 [dependencies]
 rand = "0.8"
+ndarray = "0.16.1"
+num = "0.4"
+lagrangian_interpolation = "0.1.1"
