@@ -8,7 +8,7 @@ pub fn main() {
 
 fn solve_p4() {
     let x = vec![-2.0, -1.0, 0.0, 0.5, 2.0, 3.0];
-    let y = vec![-5.0, 1.0, 1.0, 0.62, 7.0, 25.0];
+    let y = vec![-5.0, 1.0, 1.0, 0.625, 7.0, 25.0];
     let n = x.len();
 
     let d = ndd(&x, &y);

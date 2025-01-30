@@ -6,18 +6,20 @@ mod q3; // Include solution for question 3
 mod q4;
 mod q5;
 
+const SEPARATOR_STR: &str = "---------------";
+
 fn run_question(question: &str) {
     match question {
         "q3" => {
-            println!("Running q3 module...\n");
+            println!("{SEPARATOR_STR}\nRunning q3 module...\n{SEPARATOR_STR}\n");
             q3::main();
         }
         "q4" => {
-            println!("Running q4 module...\n");
+            println!("{SEPARATOR_STR}\nRunning q4 module...\n{SEPARATOR_STR}\n");
             q4::main();
         }
         "q5" => {
-            println!("Running q5 module...\n");
+            println!("{SEPARATOR_STR}\nRunning q5 module...\n{SEPARATOR_STR}\n");
             q5::main();
         }
         _ => {
