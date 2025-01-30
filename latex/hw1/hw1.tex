@@ -69,8 +69,10 @@
 	\end{enumerate}
 \end{sol}
 
-% TODO
-\hspace{18pt}
+\newpage
+
+% DONE
+\hspace{18pt}\textbf{Problem 2:} \medskip
 \begin{sol}
 	\begin{enumerate}[label=\alph*)]
 		% (a)
@@ -100,15 +102,25 @@
 
 		      $x_Ay_A = 47135059.6101$.
 
-		      In this calculation. We see that the number of accurate digits retained is $5$, which is the number of digits of the relative error in this calculation.
+		      In this calculation, we see that the number of accurate digits retained is $5$, which is the number of digits of the relative error in this calculation.
 
-		      Now, $E_{rel}(x_A - y_A)$
+		      Now, $E_{rel}(x_A - y_A) = 10451.001 - 4510.10 = 5940.901$. And $x_T - y_T = 5940.8923$.
+
+		      Thus,
+		      \begin{gather*}
+			      E_{rel}(x_A - y_A) = \frac{|(x_A - y_A) - (x_T - y_T)|}{x_t - y_t}  = \frac{|5940.901 - 5940.8923|}{5940.8923} \\
+			      = \frac{0.0087}{5940.8923} = 0.0000014644 = 0.14644 \times 10^{-5}
+		      \end{gather*}
+
+		      In this calculation, we see that the number of accurate digits is $4$.
 	\end{enumerate}
 \end{sol}
 
+\newpage
+
 \hspace{18pt}\textbf{Problem 3:} \medskip
 \begin{sol}
-	NOTE TO READER: I am adjusting some basic notation to match the Python code I have written for these algorithms. It's not necessary but it makes it easier to reference code from the mathematical algorithm.
+	NOTE TO READER: I am adjusting some basic notation to match the Python code I have written for these algorithms. It's not necessary but it makes it easier to reference code from the mathematical algorithm. Additionally, I opted to write my homework for this course in Rust. You may refer to the Rust implementation, but I provide a Python implementation as well but won't be doing so for the remaining coding questions for the course.
 	\begin{enumerate}[label=\alph*)]
 		\item Algorithm
 
@@ -162,6 +174,52 @@
 
 \hspace{18pt}\textbf{Problem 6:} \medskip
 \begin{sol}
+	First, we will provie the existence of such a polynomial using Lagrange interpolation.
+
+	In lecture we showed that, in general, give $n+1$ distinct points that the interpolation polynomial defined by
+	\begin{gather*}
+		p_n(x) = \sum_{k=0}^n l_k(x) f(x_k)
+	\end{gather*}
+	where $l_k(x) = \prod_{i=0; i\neq k}^n \frac{x - x_i}{x_k - x_i}$, interpolates the $(n+1)$ points. Additionally, $p_n(x)$ is a polynomial of degree $n$ or less.
+
+	In case using the lecture as reference is not sufficient for grading purposes, I will provide an existence proof as follows:
+
+	\textbf{Existence}
+
+	Let $P_n(x)$ denote the set of polynomials of degree $\leq n$. We will show that $\exists p(x) \in P_n(x)$ such that $p(x_i) = f(x_i)$ for all $i = 0, 1, \ldots, n$.
+
+	Consider the Lagrange interpolation formula from above. Each $l_i(x)$ is of degree $n$, and the full sum is a sum of $n$ degree polynomials, some of which (for some exponent $j$) may sum to $0$ and "cancel out". Hence, the polynomial of degree is $\leq n$.
+
+	Now we wish to show that $p_n(x)$ interpolates $f(x)$ at each $x_i$. Recall
+	\begin{gather*}
+		l_k(x_i) =
+		\begin{cases}
+			1 & k = i    \\
+			0 & k \neq i
+		\end{cases}
+	\end{gather*}
+
+	So, $p_n(x_i) = \sum_{k=0}^n f(x_k)l_k(x_i) = f(x_i)l_i(x_i) + \sum_{k=0;k\neq i}^n f(x_k)l_x(x_i)$.
+
+	But $f(x_i)l_i(x_i) = f(x_i)$ and $\sum_{k=0;k\neq i}^n f(x_k)l_k(x_i) = \sum_{k=0;k\neq i}^n f(x_k)\cdot 0 = 0$.
+
+	Hence, $p_n(x_i) = f(x_i)$ for each $i = 0, 1, \ldots, n$. Therefore, $p_n(x)$ interpolates $f(x)$ at each $x_0, x_1, \ldots, x_n$.
+
+	\medskip
+
+	\textbf{Uniqueness}
+
+	Now, we wish to provie the uniqueness of this interpolating polynomial.
+
+	Suppose that there exists two distinct polynomials $p(x)$ and $q(x)$ of degree $\leq n$ that both interpolate the function $f(x)$ at the points $x_0, x_1, \ldots, x_n$. We want to show that $p(x) = q(x)$ for all $x$.
+
+	Consider, $p(x) - q(x)$. This is a polynomial of degree $\leq n$.
+
+	Now consider, $p(x_i) - q(x_i)$ for any $x_i$ where $i \in \{0, 1, \ldots, n\}$. Since $p(x)$ and $q(x)$ are both interpolating polynomials of $f(x)$, $p(x_i) - q(x_i) = f(x_i) - f(x_i) = 0$. Thus, $p(x_i) - q(x_i)$ has at least $n+1$ distinct roots, $\{x_0, x_1, \ldots, x_n\}$.
+
+	But $p(x) - q(x)$ is a polynomial at most degree $n$ yet has at least $n+1$ distinct roots. Therefore, $p(x) - q(x) = 0$ for all $x$. Hence, $p(x) = q(x)$ for all $x$.
+
+	This shows that the interpolating polynomial of $f(x)$ is unique.
 
 \end{sol}
 
