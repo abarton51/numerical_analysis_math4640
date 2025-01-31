@@ -6,6 +6,12 @@ For example, `q3.rs` contains the solution for question 3. The main module (`mai
 
 ---
 
+# File to Questions Mapping
+
+- Problem 3 --> `q3.rs`
+
+---
+
 # Requirements
 
 ## Without Docker
