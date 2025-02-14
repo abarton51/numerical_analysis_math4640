@@ -2,11 +2,19 @@ use std::env;
 use std::process;
 
 mod math;
+mod q4;
 
 const SEPARATOR_STR: &str = "---------------";
 
 fn run_question(question: &str) {
     match question {
+        "q4" => {
+            println!("Running solution to question 4...");
+            q4::main();
+        }
+        "q5" => {
+            println!("Running solution to question 5...");
+        }
         _ => {
             println!("Error: Could not find the module {}", question);
         }
