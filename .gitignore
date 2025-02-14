@@ -12,6 +12,7 @@ __pycache__/
 *.fls
 *.synctex.gz
 *.thm
+*.out
 
 # rust debug executables
 debug/
