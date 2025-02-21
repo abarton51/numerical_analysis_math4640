@@ -22,14 +22,18 @@ impl DataPoints {
 
 fn solve_p4(data: &DataPoints) {
     let d = ndd(&data.x, &data.y);
-    let d_r = round_coefficients(&d, 1e-2);
+    let d_r = round_coefficients(&d, 1e-3);
 
-    let t = 1.5;
     let n = data.x.len();
-    let f_t = interpolate_polynomial(&data.x, &d_r, &t, &n);
 
-    println!("Polynomial coefficients: {:?}", &d_r[1..]);
-    println!("Interpolated value at t = {t}: {f_t}");
+    println!("\nNewton's Divided Difference Coefficients: {:?}", &d_r[..]);
+
+    let t_values = vec![-3., -2., -1., 0., 0.5, 1., 1.5, 2., 3., 4.];
+    println!("\nInterpolating values: {:?}:", t_values);
+    for &t in t_values.iter() {
+        let f_t = interpolate_polynomial(&data.x, &d_r, &t, &n);
+        println!("Interpolated f({}) = {:.3}", t, f_t);
+    }
 }
 
 pub fn main() {

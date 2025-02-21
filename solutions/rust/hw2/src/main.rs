@@ -9,23 +9,27 @@ const SEPARATOR_STR: &str = "---------------";
 fn run_question(question: &str) {
     match question {
         "q4" => {
-            println!("Running solution to question 4...");
+            println!("\n{}\nRunning solution to question 4...", SEPARATOR_STR);
             q4::main();
+            println!("\n{}\nEnd of solution to question 4 :)", SEPARATOR_STR);
         }
         "q5" => {
-            println!("Running solution to question 5...");
+            println!("\n{}\nRunning solution to question 5...", SEPARATOR_STR);
         }
         _ => {
-            println!("Error: Could not find the module {}", question);
+            println!(
+                "\n{}\nError: Could not find the module {}",
+                SEPARATOR_STR, question
+            );
         }
     }
 }
 
 fn main() {
-    println!("---MATH 4640, Numerical Analysis, Homework 1---");
+    println!("---MATH 4640, Numerical Analysis, Homework 2---");
     let args: Vec<String> = env::args().collect();
     if args.len() < 2 {
-        eprintln!("Usage: hw1 <question>");
+        eprintln!("Usage: hw2 <question>");
         process::exit(1);
     }
 
