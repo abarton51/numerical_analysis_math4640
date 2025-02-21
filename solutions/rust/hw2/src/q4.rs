@@ -26,7 +26,7 @@ fn solve_p4(data: &DataPoints) {
 
     let n = data.x.len();
 
-    println!("Newton's Divided Difference Coefficients: {:?}", &d_r[..]);
+    println!("\nNewton's Divided Difference Coefficients: {:?}", &d_r[..]);
 
     let t_values = vec![-3., -2., -1., 0., 0.5, 1., 1.5, 2., 3., 4.];
     println!("\nInterpolating values: {:?}:", t_values);

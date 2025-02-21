@@ -38,7 +38,7 @@ For example, `q3.rs` contains the solution for question 3. The main module (`mai
 ### Linux
 
 - Download and unzip the project zip file
-- Build Docker container: `docker build -t <container_name> ~/path/to/solutions/hw1`
+- Build Docker container: `docker build -t <container_name> ~/path/to/solutions/hw2`
 - Run Docker container: `docker run <container_name>`
 - Solutions will be displayed in terminal
 
