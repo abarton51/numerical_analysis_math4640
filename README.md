@@ -5,37 +5,29 @@ Code repository for homework and possibly other material for MATH 4640 - Numeric
 ## Structure
 
 - latex
-  - hw1
-    - hw1.*
-    - hw1.pdf
-    - hw1.tex
-    - math4640_hw1.pdf
-  - hw2
-  - hw3
-  - hw4
+  - hw#
+    - hw#.*
+    - hw#.pdf
+    - hw#.tex
+    - math4640_hw#.pdf
   - template.tex
 - LICENSE
 - README.md
 - solutions
-  - hw1
-    - Dockerfile
-    - environment.yml
-    - hw1_sols.py
-    - q3.py
-    - README.md
-  - hw2
-  - hw3
-  - hw4
+  - python 
+    - hw#
+      - Dockerfile
+      - environment.yml
+      - hw#_sols.py
+      - q#.py
+      - README.md
   - rust
-    - hw1
+    - hw#
       - Dockerfile
       - Cargo.toml
       - Cargo.lock
       - src
       - target
-    - hw2
-    - hw3
-    - hw4
 
 ## Running
 
