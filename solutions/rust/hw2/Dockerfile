@@ -1,7 +1,7 @@
 FROM rust:latest
 
-WORKDIR /usr/src/hw1
+WORKDIR /usr/src/hw2
 COPY . .
 
-CMD ["/usr/src/hw1/target/release/hw1", "q3"]
+CMD ["/usr/src/hw2/target/release/hw2", "q4"]
 
