@@ -11,6 +11,7 @@ fn run_question(question: &str) {
         "q4" => {
             println!("\n{}\nRunning solution to question 4...", SEPARATOR_STR);
             q4::main();
+            println!("\n{}\nEnd of solution to question 4 :)", SEPARATOR_STR);
         }
         "q5" => {
             println!("\n{}\nRunning solution to question 5...", SEPARATOR_STR);
