@@ -41,12 +41,12 @@ pub fn ndd(x: &[f64], y: &[f64]) -> Vec<f64> {
 // Interpolation given NDD coefficients
 // p(x) = d[0] + (x - x[0])*d[1] + (x - x[1])*(x - x[0])*d[2] + ...
 pub fn interpolate_polynomial(x: &[f64], d: &[f64], t: &f64, n: &usize) -> f64 {
-    println!("Beginning interpolation of polynomial at point {t}");
+    // println!("Beginning interpolation of polynomial at point {t}");
     let mut p = d[*n - 1];
     for i in (0..*n - 1).rev() {
         p = d[i] + (t - x[i]) * p
     }
-    println!("Interpolation succeeded.");
+    //println!("Interpolation succeeded.");
 
     p
 }

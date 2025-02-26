@@ -32,7 +32,7 @@ fn solve_p4(data: &DataPoints) {
     println!("\nInterpolating values: {:?}:", t_values);
     for &t in t_values.iter() {
         let f_t = interpolate_polynomial(&data.x, &d_r, &t, &n);
-        println!("Interpolated f({}) = {:.3}", t, f_t);
+        println!("p({}) = {:.3}", t, f_t);
     }
 }
 
