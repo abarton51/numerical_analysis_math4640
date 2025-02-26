@@ -147,9 +147,9 @@ fn evaluate_on_rand(
 }
 
 fn solve_q5(a: f64, b: f64, n: i32) {
-    let step = (b - a) / (n + 1) as f64;
+    let step = (b - a) / (n + 2) as f64;
     println!("Polynomial will have degree of {}", n);
-    let x_k: Vec<f64> = (0..n + 1).map(|i| a + (i as f64) * step).collect();
+    let x_k: Vec<f64> = (1..n + 2).map(|i| a + (i as f64) * step).collect();
 
     println!("Evenly spaced points on [{}, {}]: {:?}", a, b, x_k);
 
