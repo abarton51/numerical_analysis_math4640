@@ -3,6 +3,7 @@ use std::process;
 
 mod math;
 mod q4;
+mod q5;
 
 const SEPARATOR_STR: &str = "---------------";
 
@@ -15,6 +16,8 @@ fn run_question(question: &str) {
         }
         "q5" => {
             println!("\n{}\nRunning solution to question 5...", SEPARATOR_STR);
+            q5::main();
+            println!("\n{}\nEnd of solution to question 5 :)", SEPARATOR_STR);
         }
         _ => {
             println!(
