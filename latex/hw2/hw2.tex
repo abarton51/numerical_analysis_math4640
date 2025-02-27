@@ -2,16 +2,12 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amsfonts, amsmath, amssymb}
 \makeatletter
-\newcommand{\@BIBLABEL}{\@emptybiblabel}
-\newcommand{\@emptybiblabel}[1]{}
 \makeatother
 \usepackage[hidelinks]{hyperref}
-\usepackage{graphicx}
-\usepackage{enumitem}
 \usepackage{comment}
-\usepackage{enumitem}
 \usepackage{fullpage}
 \usepackage[english]{babel}
+\usepackage{pdfpages}
 \usepackage{tikz}
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
@@ -26,6 +22,7 @@
 \usepackage{mathtools}
 \usepackage{booktabs}
 \usepackage{physics}
+\usepackage{enumitem}
 
 \usepackage[thmmarks, thref]{ntheorem}
 
@@ -38,7 +35,10 @@
 \theoremseparator{. ---}
 \theoremsymbol{\mbox{\texttt{;o)}}}
 \newtheorem{varsol}{Solution (variant)}
-     
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
 \usetikzlibrary{matrix}
 \setlength{\marginparwidth}{2cm} 
 
@@ -52,8 +52,42 @@
 \vspace{2em}
 
 \hspace{18pt}\textbf{Problem 1:} \medskip
-\begin{sol}
+\includepdf[pages=-, scale=0.85]{numhw2q1.pdf}
 
-\end{sol}
+\hspace{18pt}\textbf{Problem 2:} \medskip
+
+\hspace{18pt}\textbf{Problem 3:} \medskip
+
+\hspace{18pt}\textbf{Problem 4:} \medskip
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{ndd_and_interpolate_screenshot.png}
+	\caption{Screenshot of code for the Newton's Divided Difference (NDD) algorithm (upper) and the interpolate using the NDD coefficients (lower).}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{numhw2q4.png}
+	\caption{Screenshot of code using the DivDif and Interpolate algorithms.}
+\end{figure}
+
+\hspace{18pt}\textbf{Problem 5:} \medskip
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{numhw2q5.png}
+	\caption{Screenshot of code using DivDif and Interpolate.}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{numhw2q5_plotfunction.png}
+	\caption{Screenshot of code plotting the true function, the interpolated polynomial, the interpolated points, and the error between the interpolated polynomial and true function.}
+\end{figure}
+
+\hspace{18pt}\textbf{Problem 6:} \medskip
+
+\hspace{18pt}\textbf{Problem 7:} \medskip
+
+\hspace{18pt}\textbf{Problem 8:} \medskip
 
 \end{document}

@@ -37,7 +37,10 @@ fn solve_p4(data: &DataPoints) {
 }
 
 pub fn main() {
+    // GTID: 903742722
+    // w=7, y = 2, z = 2
     let x: Vec<f64> = vec![-2., -1., 0., 1., 2., 3.];
+    // [w, y, 1, 0, 2, z]
     let y: Vec<f64> = vec![7., 2., 1., 0., 2., 2.];
 
     match DataPoints::new(x, y) {
