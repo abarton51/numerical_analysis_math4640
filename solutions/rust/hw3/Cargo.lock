@@ -3,5 +3,5 @@
 version = 4
 
 [[package]]
-name = "math_utils"
+name = "hw3"
 version = "0.1.0"
