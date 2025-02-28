@@ -8,7 +8,8 @@ For example, `q3.rs` contains the solution for question 3. The main module (`mai
 
 # File to Questions Mapping
 
-- Problem 3 --> `q3.rs`
+- Problem 4 --> `q4.rs`
+- Problem 5 --> `q5.rs`
 
 ---
 
@@ -31,7 +32,7 @@ For example, `q3.rs` contains the solution for question 3. The main module (`mai
 - Download zip file containing the project
 - Unzip and open the project folder
   - I ship the binary targets with my code. You can build by `cargo build --release` if you'd like.
-- Run a specific solution for a question. For example, to run the solution(s) for question 3: `cargo run q3`
+- Run a specific solution for a question. For example, to run the solution(s) for questions 4 and 5: `cargo run q4 q5`
 
 ## Running with Docker
 
