@@ -2,16 +2,12 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amsfonts, amsmath, amssymb}
 \makeatletter
-\newcommand{\@BIBLABEL}{\@emptybiblabel}
-\newcommand{\@emptybiblabel}[1]{}
 \makeatother
 \usepackage[hidelinks]{hyperref}
-\usepackage{graphicx}
-\usepackage{enumitem}
 \usepackage{comment}
-\usepackage{enumitem}
 \usepackage{fullpage}
 \usepackage[english]{babel}
+\usepackage{pdfpages}
 \usepackage{tikz}
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
@@ -26,6 +22,7 @@
 \usepackage{mathtools}
 \usepackage{booktabs}
 \usepackage{physics}
+\usepackage{enumitem}
 
 \usepackage[thmmarks, thref]{ntheorem}
 
@@ -38,7 +35,10 @@
 \theoremseparator{. ---}
 \theoremsymbol{\mbox{\texttt{;o)}}}
 \newtheorem{varsol}{Solution (variant)}
-     
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
 \usetikzlibrary{matrix}
 \setlength{\marginparwidth}{2cm} 
 
@@ -52,8 +52,97 @@
 \vspace{2em}
 
 \hspace{18pt}\textbf{Problem 1:} \medskip
-\begin{sol}
-    
-\end{sol}
+Please see attached PDF with all written solutions for questions 1-4 and 6-7.
+
+\hspace{18pt}\textbf{Problem 2:} \medskip
+Please see attached PDF with all written solutions for questions 1-4 and 6-7.
+
+\hspace{18pt}\textbf{Problem 3:} \medskip
+Please see attached PDF with all written solutions for questions 1-4 and 6-7.
+
+\hspace{18pt}\textbf{Problem 4:} \medskip
+Please see attached PDF with all written solutions for questions 1-4 and 6-7.
+
+\hspace{18pt}\textbf{Problem 5:} \medskip
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{numhw3-q5-code-1.png}
+	\caption{Screenshot of code for calculating fourier coefficients using FFT.}
+\end{figure}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{numhw3-q5-code-2.png}
+	\caption{Screenshot of code for calculating fourier coefficients using FFT.}
+\end{figure}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{numhw3-q5-code-3.png}
+	\caption{Screenshot of code for calculating fourier coefficients using FFT.}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{numhw3-q5-1-1.png}
+	\caption{Screenshot of result of code for calculating fourier coefficients using FFT.}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{numhw3-q5-1-2.png}
+	\caption{Screenshot of result of code for calculating fourier coefficients using FFT.}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{numhw3-q5-1-3.png}
+	\caption{Screenshot of result of code for calculating fourier coefficients using FFT.}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{numhw3-q5-1-4.png}
+	\caption{Screenshot of result of code for calculating fourier coefficients using FFT.}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{numhw3-q5-code-plot-1.png}
+	\caption{Screenshot of code for plotting function and reconstruction of function.}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{numhw3-q5-code-plot-2.png}
+	\caption{Screenshot of code for plotting function and reconstruction of function.}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{first-func-plot.png}
+	\caption{Screenshot of plot of first function and reconstruction for comparison ($f$ vs $g_5$).}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{second-func-plot.png}
+	\caption{Screenshot of plot of first function and reconstruction for comparison ($f$ vs $g_5$).}
+\end{figure}
+
+
+\clearpage
+
+\hspace{18pt}\textbf{Problem 6:} \medskip
+Please see attached PDF with all written solutions for questions 1-4 and 6-7.
+
+\hspace{18pt}\textbf{Problem 7:} \medskip
+Please see attached PDF with all written solutions for questions 1-4 and 6-7.
+
+\hspace{18pt}\textbf{Problem 8:} \medskip
+
+\clearpage
+
+\section{Written Solutions}
+\includepdf[pages=-, scale=0.85]{numhw3-solutions.pdf}
 
 \end{document}

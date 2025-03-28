@@ -1,6 +1,5 @@
 use core::f64;
 
-use crate::math::approx::round_coefficients;
 use crate::math::interpolation::{interpolate_polynomial, ndd};
 use plotters::prelude::*;
 use rand::Rng;
