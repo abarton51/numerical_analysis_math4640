@@ -26,11 +26,6 @@ jobs:
       run: cargo build --verbose
 
     - uses: actions/checkout@v4
-    - name: Build HW2
-      working-directory: ./sols/hw2
-      run: cargo build --verbose
-
-    - uses: actions/checkout@v4
     - name: Build HW3
       working-directory: ./sols/hw3
       run: cargo build --verbose
