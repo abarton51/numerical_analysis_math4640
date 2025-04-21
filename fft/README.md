@@ -1,3 +1,0 @@
-# Fast Fourier Transform
-
-FFT

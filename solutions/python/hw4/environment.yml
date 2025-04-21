@@ -1,9 +1,0 @@
-name: numerical_analysis
-channels:
-  - conda-forge
-dependencies:
-  - python
-  - numpy
-  - scipy
-  - matplotlib
-  - pip
