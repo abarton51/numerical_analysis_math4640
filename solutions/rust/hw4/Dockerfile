@@ -3,5 +3,5 @@ FROM rust:latest
 WORKDIR /usr/src/hw4
 COPY . .
 
-CMD ["/usr/src/hw4/target/release/hw4"]
+CMD ["/usr/src/hw4/target/release/hw4", "q2", "q6"]
 
