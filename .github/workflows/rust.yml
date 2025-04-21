@@ -24,13 +24,3 @@ jobs:
     - name: Build HW1
       working-directory: ./sols/hw1
       run: cargo build --verbose
-
-    - uses: actions/checkout@v4
-    - name: Build HW3
-      working-directory: ./sols/hw3
-      run: cargo build --verbose
-
-    - uses: actions/checkout@v4
-    - name: Build HW4
-      working-directory: ./sols/hw4
-      run: cargo build --verbose
