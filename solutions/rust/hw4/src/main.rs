@@ -2,6 +2,7 @@ use std::env;
 use std::process;
 
 mod q2;
+mod q6;
 
 const SEPARATOR_STR: &str = "---------------";
 
@@ -11,6 +12,11 @@ fn run_question(question: &str) {
             println!("\n{}\nRunning solution to question 2...", SEPARATOR_STR);
             q2::main();
             println!("\n{}\nEnd of solution to question 2 :)", SEPARATOR_STR);
+        }
+        "q6" => {
+            println!("\n{}\nRunning solution to question 6...", SEPARATOR_STR);
+            q6::main();
+            println!("\n{}\nEnd of solution to question 6 :)", SEPARATOR_STR);
         }
         _ => {
             println!(
